@@ -9,4 +9,5 @@ Copperhead uses shortcuts to change syntax, but comes with extra packages that I
 
 <h1>how to install?</h1>
 
-put the files into your project's directory and import copperhead.py to your project.
+step 1: run setup.py (``python3 setup.py``)
+<br>put the files into your project's directory and import copperhead.py to your project.
