@@ -1,3 +1,5 @@
+<title>Project Copperhead</title>
+
 # Project CopperHead
 CopperUI is a python package, which is designed to fix my personal grievances. it changes syntax to be easier to read, and makes TUI applications easier to write.
 
