@@ -8,9 +8,4 @@ Copperhead is a python package made for making beautiful applications and tools 
 Copperhead uses shortcuts to change syntax, but comes with extra packages that I find absolutley necessary for most projects.
 
 <h1>how to install?</h1>
-manual:
-  step 1: download the files and run pip install setup.py
-  you're done!
-  
-automatic:
-  step 1: run ``pip install copperUI``
+run ``pip install copperUI``
