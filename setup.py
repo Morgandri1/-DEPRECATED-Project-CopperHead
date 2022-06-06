@@ -6,6 +6,7 @@ packages = [
     "colorama",
     "flask",
     "requests",
+    "pyfiglet",
 ]
 
 class setup():
