@@ -1,19 +1,16 @@
 # Project CopperHead
-Copperhead is a reinterpreted version of python, which is designed to fix my personal grievances.
-
+CopperUI is a python package, which is designed to fix my personal grievances. it changes syntax to be easier to read, and makes TUI applications easier to write.
 
 <h1>Why Copperhead?</h1>
-Copperhead is a python-based language which is fast, simple, and beginner friendly. 
-
-similar to lua, copperhead is simple, and powerful. though copperhead is based on python, it is not designed for machine learning, or big data analysis. its made for small projects, and easy scripting. built for learners to easily transfer to python.
+Copperhead is a python package made for making beautiful applications and tools in the command line. 
 
 <h1>how does it work?</h1>
-Copperhead runs on a local python-interpreter, but comes with extra packages that I find absolutley necessary for most projects.
-
-<br>
-<br>
-<br>
+Copperhead uses shortcuts to change syntax, but comes with extra packages that I find absolutley necessary for most projects.
 
 <h1>how to install?</h1>
-step 1: go to the releases tab and download the one for your architecture <br>
-step 2: unzip the file and you should see a readme.txt file. open the file and read it **thourougly** <br>
+manual:
+  step 1: download the files and run pip install setup.py
+  you're done!
+  
+automatic:
+  step 1: run ``pip install copperUI``
