@@ -9,4 +9,4 @@ Copperhead uses shortcuts to change syntax, but comes with extra packages that I
 
 <h1>how to install?</h1>
 
-run ``pip install copperUI``
+put the files into your project's directory and import copperhead.py to your project.
