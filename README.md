@@ -7,6 +7,9 @@ Copperhead is a python package made for making beautiful applications and tools 
 <h1>how does it work?</h1>
 Copperhead uses shortcuts to change syntax, but comes with extra packages that I find absolutley necessary for most projects.
 
+<h1>Features:</h1>
+copperhead makes it easier to make TUI applications, starting with personalization. **all** textual functions include both a color, and text option. this lets you change the color to match everything. 
+
 <h1>how to install?</h1>
 
 step 1: run setup.py (``python3 setup.py``)
