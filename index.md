@@ -1,37 +1,13 @@
-## Welcome to GitHub Pages
+# Project CopperHead
+CopperUI is a python package, which is designed to fix my personal grievances. it changes syntax to be easier to read, and makes TUI applications easier to write.
 
-You can use the [editor on GitHub](https://github.com/Morgandri1/Project-CopperHead/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+<h1>Why Copperhead?</h1>
+Copperhead is a python package made for making beautiful applications and tools in the command line. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<h1>how does it work?</h1>
+Copperhead uses shortcuts to change syntax, but comes with extra packages that I find absolutley necessary for most projects.
 
-### Markdown
+<h1>how to install?</h1>
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Morgandri1/Project-CopperHead/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+step 1: run setup.py (``python3 setup.py``)
+<br>put the files into your project's directory and import copperhead.py to your project.
