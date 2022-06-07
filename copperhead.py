@@ -51,4 +51,7 @@ def loading_bar(color, text, time):
     Time.sleep(int(time))
     done = True
 
+
+
+# maybe important?
 colorama.init()
