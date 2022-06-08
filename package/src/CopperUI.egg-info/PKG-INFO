@@ -1,3 +1,18 @@
+Metadata-Version: 2.1
+Name: CopperUI
+Version: 1.6.1
+Summary: a TUI helper package
+Home-page: https://github.com/Morgandri1/Project-Copperhead
+Author: Morgan Metz
+Author-email: mlmi4@k12albemarle.org
+Project-URL: Bug Tracker, https://github.com/Morgandri1/Project-Copperhead/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.0
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
 # Project CopperHead
 CopperUI is a python package, which is designed to fix my personal grievances. it changes syntax to be easier to read, and makes TUI applications easier to write.
 
@@ -13,10 +28,5 @@ copperhead makes it easier to make TUI applications, starting with personalizati
 
 <h1>how to install?</h1>
 
-through pip:
-    ``pip install CopperUI``
-
-manual build:
-    run setup.py
-    add copperhead.py to root directory of project.
-    (or wherever you want it.)
+step 1: run setup.py (``python3 setup.py``)
+<br>put the files into your project's directory and import copperhead.py to your project.

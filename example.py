@@ -1,4 +1,6 @@
-from copperhead import *
+# from copperhead import *
+from CopperUI import *
+
 try:
     banner(color=green, text="copperhead")
     color_print(color=red, text="hi")
