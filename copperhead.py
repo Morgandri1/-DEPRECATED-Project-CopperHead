@@ -40,18 +40,16 @@ def loading_bar(color, text, time):
         for c in itertools.cycle(['|', '/', '-', '\\']):
             if done:
                 break
-            sys.stdout.write(f'\r{text} ' + c)
+            sys.stdout.write(color + f'\r{text} ' + c)
             sys.stdout.flush()
             Time.sleep(0.1)
-        sys.stdout.write('\rDone!')
+        sys.stdout.write(color + '\rDone!')
 
     t = threading.Thread(target=animate)
     t.daemon=True   # allows program to be stopped upon KeyboardInterrupt
     t.start()
     Time.sleep(int(time))
     done = True
-
-
 
 # maybe important?
 colorama.init()
