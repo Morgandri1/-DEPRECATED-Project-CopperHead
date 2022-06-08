@@ -18,5 +18,5 @@ through pip:
 
 manual build:
     run setup.py
-    add copperhead.py to root directory of project.
-    (or wherever you want it.)
+    <br>add copperhead.py to root directory of project.
+    <br>(or wherever you want it.)
