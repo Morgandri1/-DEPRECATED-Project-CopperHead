@@ -14,9 +14,8 @@ copperhead makes it easier to make TUI applications, starting with personalizati
 <h1>how to install?</h1>
 
 through pip:
-    ``pip install CopperUI``
+    <br>``pip install CopperUI``
 
 manual build:
-    run setup.py
-    <br>add copperhead.py to root directory of project.
-    <br>(or wherever you want it.)
+    <br>    run setup.py
+    <br>    add copperhead.py to root directory of project. (or wherever you want it.)
