@@ -33,7 +33,7 @@ def banner(color = reset_color, *, text, font=DEFAULT_FONT):
 
 def color_print(color, text):
     """makes colored text"""
-    print(color + text + white)
+    print(color + text + reset_color)
 
 def loading_bar(color=reset_color, text="loading...", time=1):
     """makes a little loading icon next to your inputed text, for however long you'd like it to wait."""
