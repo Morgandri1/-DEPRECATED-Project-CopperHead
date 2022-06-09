@@ -1,1 +1,1 @@
-from copperUI.copperhead import *
+from CopperUI.copperhead import *

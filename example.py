@@ -1,5 +1,5 @@
-from copperhead import *
-# from CopperUI import *
+# from copperhead import *
+from CopperUI import *
 
 try:
     banner(color=green, text="Copperhead")
