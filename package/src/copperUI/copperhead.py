@@ -8,6 +8,7 @@ import sys
 
 # color variables because of course colorama's color names have to be in caps
 red = colour.RED
+yellow = colour.YELLOW
 blue = colour.CYAN
 black = colour.BLACK
 green = colour.GREEN
@@ -53,6 +54,18 @@ def loading_bar(color=reset_color, text="loading...", time=1):
     Time.sleep(int(time))
     done = True
     print(reset_color + "\ndone")
+
+def rainbow_print(text="colors"):
+    """prints with **flare**"""
+    def animate():
+        for c in itertools.cycle([red+text, yellow+text, green+text, blue+text, magenta+text, black+text]):
+            sys.stdout.write(c)
+            sys.stdout.flush()
+            Time.sleep(0.4)
+            
+    t = threading.Thread(target=animate)
+    t.daemon=True   # allows program to be stopped upon KeyboardInterrupt
+    t.start()
 
 # maybe important?
 colorama.init()
