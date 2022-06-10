@@ -1,4 +1,4 @@
-# from copperhead import *
+from copperhead import *
 from CopperUI import *
 
 try:

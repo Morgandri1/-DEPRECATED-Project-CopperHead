@@ -1,4 +1,4 @@
-from copperhead import *
+from .copperhead import *
 from sys import argv as arg
 from colorama import Fore, Back
 
@@ -459,3 +459,7 @@ if arg[1] == "-f":
     list()
 elif arg[1] == "-h":
     help()
+elif arg[1] == "-b":
+    for f in fonts:
+        banner(text="Sample", font=f)
+        prompt(color=red, text="press enter for the next font.")

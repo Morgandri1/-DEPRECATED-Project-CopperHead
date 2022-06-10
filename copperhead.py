@@ -5,6 +5,7 @@ import itertools
 import threading
 import time as Time
 import sys
+from textual.app import App as Textual
 
 # color variables because of course colorama's color names have to be in caps
 red = colour.RED
@@ -20,7 +21,7 @@ def prompt(color = reset_color, text = "press enter to continue"):
     """creates a no-input continue prompt."""
     value = input(color + f"{text} ")
     if value == "":
-        return
+        return 
     else:
         print("No input required!")
         prompt(text)
