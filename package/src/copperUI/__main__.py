@@ -1,6 +1,7 @@
 from .copperhead import *
 from sys import argv as arg
 from colorama import Fore, Back
+from pyfiglet import FontNotFound
 
 fonts = ["1943____",
 "3-d",
@@ -461,5 +462,8 @@ elif arg[1] == "-h":
     help()
 elif arg[1] == "-b":
     for f in fonts:
-        banner(text="Sample", font=f)
-        prompt(color=red, text="press enter for the next font.")
+        try:
+            banner(text="Sample", font=f)
+            prompt(color=red, text="press enter for the next font.")
+        except FontNotFound:
+            exit()
