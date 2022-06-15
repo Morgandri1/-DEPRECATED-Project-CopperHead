@@ -1,10 +1,10 @@
-import colorama
 import pyfiglet
-from colorama import Fore as colour
+from colorama import Fore as colour, Back as back
 import itertools
 import threading
 import time as Time
 import sys
+import asyncio # used for app class. might never be implimented though.
 
 # color variables because of course colorama's color names have to be in caps
 red = colour.RED
@@ -15,7 +15,19 @@ green = colour.GREEN
 white = colour.WHITE
 magenta = colour.MAGENTA
 reset_color = colour.RESET
-DEFAULT_FONT = 'standard'
+
+DEFAULT_FONT = 'standard' # pyfiglet banner font
+
+back_red = back.RED
+back_yellow = back.YELLOW
+back_blue = back.BLUE
+back_black = back.BLACK
+back_green = back.GREEN
+back_white = back.WHITE
+back_magenta = back.MAGENTA
+reset_back = back.RESET
+
+false = False # i swear this trips me up so much and it annoys me so im making a namespace for it
 
 def prompt(color = reset_color, text = "press enter to continue"):
     """creates a no-input continue prompt."""
@@ -55,7 +67,7 @@ def loading_bar(color=reset_color, text="loading...", time=1):
     done = True
     print(reset_color + "\ndone")
 
-def rainbow_print(text="colors", time=10):
+def rainbow_print(text="colors", time=5):
     """prints with **flare**"""
     done = False
     def animate():
@@ -71,6 +83,26 @@ def rainbow_print(text="colors", time=10):
     t.start()
     Time.sleep(int(time))
     done = True
+    print(reset_color+"\r")
 
-# maybe important?
-colorama.init()
+# -------- v2 line -------------
+# class copperUI_app():
+#     """a main app structure. all apps inherit from this. i have no idea what i'm doing here"""
+#     def __init__(self):
+#         colorama.init()
+#         pass
+
+#     @classmethod
+#     def run(self, logging: bool = False):
+#         """Runs everything in the app class"""
+#         async def runner():
+#             print("hello!")
+
+#         try:
+#             asyncio.run(runner())
+#         except KeyboardInterrupt:
+#             return
+# -------- v2 line -------------
+
+# might use that later ^^
+# maybe not tho

@@ -1,6 +1,6 @@
 import colorama
 import pyfiglet
-from colorama import Fore as colour
+from colorama import Fore as colour, Back as back
 import itertools
 import threading
 import time as Time
@@ -16,6 +16,9 @@ white = colour.WHITE
 magenta = colour.MAGENTA
 reset_color = colour.RESET
 DEFAULT_FONT = 'standard'
+
+back_red = back.RED
+back_yellow = back.YELLOW
 
 def prompt(color = reset_color, text = "press enter to continue"):
     """creates a no-input continue prompt."""
@@ -55,17 +58,23 @@ def loading_bar(color=reset_color, text="loading...", time=1):
     done = True
     print(reset_color + "\ndone")
 
-def rainbow_print(text="colors"):
+def rainbow_print(text="colors", time=5):
     """prints with **flare**"""
+    done = False
     def animate():
-        for c in itertools.cycle([red+text, yellow+text, green+text, blue+text, magenta+text, black+text]):
-            sys.stdout.write(c)
+        for c in itertools.cycle([f"{red+text}", f"{yellow+text}", f"{green+text}", f"{blue+text}", f"{magenta+text}", f"{black+text}"]):
+            if done:
+                break
+            sys.stdout.write(f'\r'+c)
             sys.stdout.flush()
-            Time.sleep(0.4)
-            
+            Time.sleep(0.1)
+
     t = threading.Thread(target=animate)
     t.daemon=True   # allows program to be stopped upon KeyboardInterrupt
     t.start()
+    Time.sleep(int(time))
+    done = True
+    print(reset_color+"\r")
 
 # maybe important?
 colorama.init()

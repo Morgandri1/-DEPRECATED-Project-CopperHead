@@ -4,28 +4,24 @@ Macos_Prefix = "python3 -m "
 packages = [
     "numpy",
     "colorama",
-    "flask",
-    "requests",
     "pyfiglet",
 ]
 
 class setup():
-    systype = -1
     """main setup process"""
     def OS():
         """checks if you are using a unix based device or windows"""
         print(os.name)
         if os.name == "posix":
-            setup.systype = "posix"
+            setup.package_inst(systype="posix")
         else:
-            setup.systype = "win"
+            setup.package_inst(systype="win")
             
-    def package_inst():
-        setup.OS()
-        if setup.systype == "posix":
+    def package_inst(systype):
+        """installs required dependencies"""
+        if systype == "posix":
             for package in packages:
-                os.system(f"{Macos_Prefix} pip install {package}")
-        elif setup.systype == "win": 
+                os.system(f"{Macos_Prefix} pip install {package}") # installs all the copperUI dependencies. 
+        elif systype == "win": 
             for package in packages:
                 os.system(f"pip install {package}")
-

@@ -1,7 +1,9 @@
 from .copperhead import *
 from sys import argv as arg
-from colorama import Fore, Back
+from colorama import Back
 from pyfiglet import FontNotFound
+from os import system as cmd
+import os
 
 fonts = ["1943____",
 "3-d",
@@ -437,7 +439,7 @@ def help():
     print(f"""
     CLI:
         -f -> shows all font options for banner()
-        help -> displays this message
+        -h -> displays this message
     Functions and values
         all text based functions share at least 2 common args;
             text: this one is pretty obvious. there is not a default value for this on any function besides prompt.
@@ -453,6 +455,9 @@ def help():
         
         banner documentation:
             banner has the standard options first, and then font. font options can be found by running {Back.CYAN}python3 -m copperhead -f {Back.RESET}
+
+        prompt documentation:
+            prompt takes **no input** it will return a warning if the user gives input. this is to reduce confusion with inputs. 
     """)
     prompt()
 
@@ -467,3 +472,7 @@ elif arg[1] == "-b":
             prompt(color=red, text="press enter for the next font.")
         except FontNotFound:
             exit()
+elif arg[1] == "--debug":
+    print(os.name)
+elif arg[1] == "-r":
+    rainbow_print(text="hello!")
