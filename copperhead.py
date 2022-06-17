@@ -5,6 +5,7 @@ import threading # used for waiting stuff
 from time import sleep as Time # used for waiting...
 import sys # used for stdout
 import asyncio # used for app class.
+from playsound import playsound # its morbin time
 
 # color variables because of course colorama's color names have to be in caps
 red = colour.RED
@@ -48,7 +49,7 @@ def color_print(color, text, background = ""):
     """makes colored text"""
     print(background + color + text + white + reset_back)
 
-def loading_bar(color=reset_color, text="loading...", time=1, background: str = ""):
+def loading(color=reset_color, text="loading...", time=1, background: str = ""):
     """makes a little loading icon next to your inputed text, for however long you'd like it to wait."""
     done = False
     def animate():
@@ -66,6 +67,14 @@ def loading_bar(color=reset_color, text="loading...", time=1, background: str = 
     Time(int(time))
     done = True
     print(reset_color + reset_back + "\ndone")
+
+def play(path, returns: bool = True):
+    """plays a sound"""
+    playsound(path)
+    if returns == True:
+        print(f"playing {path}...")
+    else:
+        return
 
 def rainbow_print(text="colors", time=5):
     """prints with **flare**"""
@@ -87,7 +96,7 @@ def rainbow_print(text="colors", time=5):
 
 class CopperApp():
     """App organization functions"""
-    def run(Welcome_Screen: str, persistent: bool = False):
+    def run(Welcome_Screen: str, persistent: bool = False, startsound: str = ""):
         """Runs the app. this has the benefit of cleaning up app structuring, such as exiting with KeyboardInterupt
         runs with asyncio. for single eventloop apps, use start.
         if you use run, make sure to define with async. otherwise, use start. 
@@ -95,33 +104,40 @@ class CopperApp():
         Args:
             Welcome_Screen: this is where your main menu should be defined. add the menu's function name here.
             persistent: this is a true/false arg. this decides if your app will loop.
+            startsound: this is where you put the path to a sound file you want to play on startup
         """
 
         async def run_app() -> None:
             try:
                 if persistent == True:
                     while persistent == True:
+                        playsound(startsound)
                         await Welcome_Screen()
                 else: 
+                    playsound(startsound)
                     await Welcome_Screen()
             except KeyboardInterrupt:
                 print(reset_back + reset_color+"\nexiting... ")
 
         asyncio.run(run_app())
 
-    def start(Welcome_Screen: str, persistent: bool = False):
+    def start(Welcome_Screen: str, persistent: bool = False, startsound: str = ""):
         """single eventloop processing for CopperApp processes
         
         *not async*
 
         Args:
             Welcome_Screen: this is where your main menu should be defined. add the menu's function name here.
-            persistent: this is a true/false arg. this decides if your app will loop."""
+            persistent: this is a true/false arg. this decides if your app will loop.
+            startsound: this is where you put the path to a sound file you want to play on startup"""
         try:
             if persistent == True:
                 while persistent == True:
+                    playsound(startsound)
                     Welcome_Screen()
-            else: 
+            else:
+                playsound(startsound)
                 Welcome_Screen()
+                
         except KeyboardInterrupt:
             print(reset_back + reset_color+"\nexiting... ")

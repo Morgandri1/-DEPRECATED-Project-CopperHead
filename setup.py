@@ -1,10 +1,13 @@
 import os
 
-Macos_Prefix = "python3 -m "
+posix_Prefix = "python3 -m "
 packages = [
-    "numpy",
-    "colorama",
-    "pyfiglet",
+    "setuptools>=42",
+    "numpy", 
+    "colorama", 
+    "pyfiglet", 
+    "textual", 
+    "playsound"
 ]
 
 class setup():
@@ -21,7 +24,7 @@ class setup():
         """installs required dependencies"""
         if systype == "posix":
             for package in packages:
-                os.system(f"{Macos_Prefix} pip install {package}") # installs all the copperUI dependencies. 
+                os.system(f"{posix_Prefix} pip install {package}") # installs all the copperUI dependencies. 
         elif systype == "win": 
             for package in packages:
                 os.system(f"pip install {package}")
