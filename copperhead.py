@@ -29,33 +29,33 @@ reset_back = back.RESET
 
 false = False # i swear this trips me up so much and it annoys me so im making a namespace for it
 
-def prompt(color = reset_color, text = "press enter to continue"):
+def prompt(color = reset_color, text = "press enter to continue", background: str = ""):
     """creates a no-input continue prompt."""
-    value = input(color + f"{text} " + reset_back)
+    value = input(background + color + f"{text} " + reset_back)
     if value == "":
         return
     else:
         print("No input required!")
         prompt(color, text=text)
 
-def banner(color = reset_color, *, text, font=DEFAULT_FONT):
+def banner(color = reset_color, *, text, font=DEFAULT_FONT, background: str = ""):
     """creates a banner for your application"""
     banner = pyfiglet.figlet_format(text, font)
-    print(color + banner + reset_back)
-    print(white)
+    print(background + color + banner)
+    print(reset_color + reset_back)
 
 def color_print(color, text, background = ""):
     """makes colored text"""
     print(background + color + text + white + reset_back)
 
-def loading_bar(color=reset_color, text="loading...", time=1):
+def loading_bar(color=reset_color, text="loading...", time=1, background: str = ""):
     """makes a little loading icon next to your inputed text, for however long you'd like it to wait."""
     done = False
     def animate():
         for c in itertools.cycle(['|', '/', '-', '\\']):
             if done:
                 break
-            sys.stdout.write(color + f'\r{text} ' + c)
+            sys.stdout.write(background + color + f'\r{text} ' + c)
             sys.stdout.flush()
             Time(0.1)
         sys.stdout.write(color + '\rDone!')
@@ -90,6 +90,8 @@ class CopperApp():
     def run(Welcome_Screen: str, persistent: bool = False):
         """Runs the app. this has the benefit of cleaning up app structuring, such as exiting with KeyboardInterupt
         runs with asyncio. for single eventloop apps, use start.
+        if you use run, make sure to define with async. otherwise, use start. 
+        if you dont need async, start is probably your best option.
         Args:
             Welcome_Screen: this is where your main menu should be defined. add the menu's function name here.
             persistent: this is a true/false arg. this decides if your app will loop.
@@ -110,6 +112,8 @@ class CopperApp():
     def start(Welcome_Screen: str, persistent: bool = False):
         """single eventloop processing for CopperApp processes
         
+        *not async*
+
         Args:
             Welcome_Screen: this is where your main menu should be defined. add the menu's function name here.
             persistent: this is a true/false arg. this decides if your app will loop."""
