@@ -22,6 +22,7 @@ def home():
     rainbow_print(text="test")
     color_print(color=white, text="hello", background=back_red)
     print("hello!")
+    play(path="test.mp3")
 
 if arg[1] == "-a":
     CopperApp.run(Welcome_Screen=menu, persistent=False)

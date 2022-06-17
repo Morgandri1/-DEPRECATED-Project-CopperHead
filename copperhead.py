@@ -96,7 +96,7 @@ def rainbow_print(text="colors", time=5):
 
 class CopperApp():
     """App organization functions"""
-    def run(Welcome_Screen: str, persistent: bool = False, startsound: str = ""):
+    def run(Welcome_Screen: str, persistent: bool = False, startsound: str = None):
         """Runs the app. this has the benefit of cleaning up app structuring, such as exiting with KeyboardInterupt
         runs with asyncio. for single eventloop apps, use start.
         if you use run, make sure to define with async. otherwise, use start. 
@@ -111,17 +111,19 @@ class CopperApp():
             try:
                 if persistent == True:
                     while persistent == True:
-                        playsound(startsound)
+                        if startsound != None:
+                            playsound(startsound)
                         await Welcome_Screen()
                 else: 
-                    playsound(startsound)
+                    if startsound != None:
+                        playsound(startsound)
                     await Welcome_Screen()
             except KeyboardInterrupt:
                 print(reset_back + reset_color+"\nexiting... ")
 
         asyncio.run(run_app())
 
-    def start(Welcome_Screen: str, persistent: bool = False, startsound: str = ""):
+    def start(Welcome_Screen: str, persistent: bool = False, startsound: str = None):
         """single eventloop processing for CopperApp processes
         
         *not async*
@@ -133,10 +135,12 @@ class CopperApp():
         try:
             if persistent == True:
                 while persistent == True:
-                    playsound(startsound)
+                    if startsound != None:
+                        playsound(startsound)
                     Welcome_Screen()
             else:
-                playsound(startsound)
+                if startsound != None:
+                        playsound(startsound)
                 Welcome_Screen()
                 
         except KeyboardInterrupt:
