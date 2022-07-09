@@ -1,7 +1,5 @@
-from sympy import per
-from copperhead import *
 from sys import argv as arg
-# from CopperUI import *
+from CopperUI import *
 
 async def menu():
     banner(color=green, text="Copperhead")
@@ -19,12 +17,11 @@ def home():
     prompt(color=green)
     loading(color=blue, text="loading...", time=1)
     print("no color here!")
-    rainbow_print(text="test")
+    rainbow_print(text="test", time=1)
     color_print(color=white, text="hello", background=back_red)
     print("hello!")
-    play(path="test.mp3")
 
 if arg[1] == "-a":
-    CopperApp.run(Welcome_Screen=menu, persistent=False)
+    CopperApp.run(func=menu, persistent=False)
 if arg[1] == "-s":
-    CopperApp.start(Welcome_Screen=home, persistent=False)
+    CopperApp.start(func=home, persistent=False)

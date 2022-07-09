@@ -2,7 +2,6 @@ from .copperhead import *
 from sys import argv as arg
 from colorama import Back
 from pyfiglet import FontNotFound
-from os import system as cmd
 import os
 
 fonts = ["1943____",
@@ -434,6 +433,7 @@ fonts = ["1943____",
 def list():
     prompt(color=red, text="this command lists *all* fonts usable with the banner function. the list is very long.\n\n press enter to continue...")
     print("\n".join(fonts))
+    prompt()
 
 def help():
     print(f"""
@@ -476,3 +476,5 @@ elif arg[1] == "--debug":
     print(os.name)
 elif arg[1] == "-r":
     rainbow_print(text="hello!")
+else:
+    print("wrong arg! use -h for a command list.")
