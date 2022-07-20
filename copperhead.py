@@ -29,6 +29,20 @@ back_white = back.WHITE
 back_magenta = back.MAGENTA
 reset_back = back.RESET
 
+def error(text, stripped):
+    """makes an error print"""
+    if stripped == False:
+        print(f"❌ details: {text}")
+    else:
+        print(f"❌ {text}")
+
+def passed(text, stripped: bool = True):
+    """makes a pass print"""
+    if stripped == False:
+        print(f"✅ details: {text}")
+    else:
+        print(f"✅ {text}")
+
 def prompt(color = reset_color, text = "press enter to continue",*, background = reset_back):
     """creates a no-input continue prompt."""
     value = input(background + color + f"{text} " + reset_back)
@@ -48,7 +62,7 @@ def color_print(color, text, background = reset_back):
     """makes colored text"""
     print(background + color + text + white + reset_back)
 
-def loading(color=reset_color, text="loading...", time=1, background = reset_back):
+async def loading(color=reset_color, text="loading...", time=1, background = reset_back):
     """makes a little loading icon next to your inputed text, for however long you'd like it to wait."""
     done = False
     def animate():
@@ -85,7 +99,7 @@ def rainbow_print(text="colors", time=5):
     done = True
     print(reset_color + reset_back +"\r")
 
-def clock(format="24"):
+async def clock(format="24"):
     """creates a clock
     args:
         format: this decides if you want to print with the 12 or 24 hour time format
@@ -108,7 +122,7 @@ def clock(format="24"):
 
 class CopperApp():
     """App organization functions"""
-    def run(func, persistent: bool = False, startsound: str = None):
+    async def run(func, persistent: bool = False, startsound: str = None):
         """Runs the app. this has the benefit of cleaning up app structuring, such as exiting with KeyboardInterupt
         runs with asyncio. for single eventloop apps, use start.
         if you use run, make sure to define with async. otherwise, use start. 
