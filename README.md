@@ -1,3 +1,6 @@
+Hello!
+we're moving to https://github.com/Copperhead-Software
+
 # Project CopperHead
 CopperUI is a python package, which is designed to fix my personal grievances. it changes syntax to be easier to read, and makes TUI applications easier to write.
 
