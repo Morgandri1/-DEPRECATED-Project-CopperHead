@@ -2,7 +2,7 @@ from sys import argv as arg
 from CopperUI import *
 
 async def menu():
-    banner(color=green, text="Copperhead")
+    banner(color=green, text="Copperhead", background=green)
     color_print(color=red, text="hi")
     prompt(color=green)
     loading(color=blue, text="loading...", time=1)
@@ -12,7 +12,7 @@ async def menu():
     print("hello!")
 
 def home():
-    banner(color=green, text="Copperhead")
+    banner(color=green, text="Copperhead", background=green)
     color_print(color=red, text="hi")
     prompt(color=green)
     loading(color=blue, text="loading...", time=1)
